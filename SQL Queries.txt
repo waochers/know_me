@@ -1,0 +1,45 @@
+CREATE TABLE users (
+firstname VARCHAR(30) NOT NULL,
+lastname VARCHAR(30) NOT NULL,
+email VARCHAR(50) PRIMARY KEY,
+user_pwd varchar(100) not null
+)
+
+
+
+
+CREATE TABLE question(
+qid int NOT NULL AUTO_INCREMENT,
+type VARCHAR(50) NOT NULL,
+question TEXT NOT NULL ,
+a TEXT NOT NULL ,
+b TEXT NOT NULL,
+c TEXT NOT NULL,
+d TEXT NOT NULL,
+FOREIGN KEY (type) REFERENCES category(type),
+PRIMARY KEY (qid)
+)
+
+CREATE TABLE category(
+type VARCHAR(50) PRIMARY KEY,
+id INT(6) UNSIGNED 
+)
+
+CREATE TABLE mapping(
+email VARCHAR(50),
+answer VARCHAR(5),
+qid INT(6),
+FOREIGN KEY (email) REFERENCES users(email),
+FOREIGN KEY (qid) REFERENCES question(qid)
+)
+
+
+SELECT users.email, users.password, data.data_1, data.data_2
+FROM users,data 
+WHERE users.email='$user_email' AND users.user_id=data.user_id";
+
+INSERT INTO `know_me`.`users` (`firstname`, `lastname`, `email`, `user_pwd`) VALUES ('Vardan', 'Gupta', 'vardaan.gupta27@gmail.com', '111111');
+INSERT INTO `know_me`.`category` (`type`, `id`) VALUES ('General', '1');
+DELETE FROM `know_me`.`question` WHERE `question`.`qid` = 2"
+
+INSERT into 
